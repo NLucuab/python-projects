@@ -1,6 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 
+"""
+Introdcution to web scraping (in Python) project as found in the Beautiful Soup Tutorial on freeCodeCamp.org
+"""
+
 result = requests.get("https://www.google.com/")
 
 # To make sure that the website is accessible, check for a 200 OK response.
