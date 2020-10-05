@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 """
 This is a website webscraper that utilizes BeautifulSoup. 
 This was made to be used to gather the updated COVID19 stats of Washington State, USA.
-I utilized Wayscript.com in order send myself daily text message updates using the data collected by this code.
+I utilized Wayscript.com in order to send myself daily text message updates using the data collected by this code.
 """
 
 URL = "https://www.worldometers.info/coronavirus/usa/washington/"
