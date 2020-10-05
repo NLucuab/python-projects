@@ -24,31 +24,16 @@ content = results.find_all("td")
 # for entries in content:
 #     print(entries.text.strip())
 
-counties = [] # good
-total_cases = []
-new_cases = []
-total_deaths = [] # good
-new_deaths = []
-
+outputs = {}
 
 i = 0
-for entry in content:
-    if i % 8 == 0:
-        counties.append(entry.text.strip())
-    elif i % 8 == 1:
-        total_cases.append(entry.text.strip())
-    elif i % 8 == 2:
-        new_cases.append(entry.text.strip())
-    elif i % 8 == 3:
-        total_deaths.append(entry.text.strip())
-    elif i % 8 == 4:
-        new_deaths.append(entry.text.strip())
-    i += 1
-
-# print(counties)
-# print(total_cases)
-# print(new_cases)
-# print(total_deaths)
-# print(new_deaths)
-
-
+while i < len(content):
+    if content[i].text.strip() != 'King':
+        i+=1
+        continue
+    outputs['total cases'] = content[i+1].text.strip()
+    outputs['new cases'] = content[i+2].text.strip()
+    outputs['total deaths'] = content[i+3].text.strip()
+    outputs['new deaths'] = content[i+4].text.strip()
+    break
+print(outputs)
